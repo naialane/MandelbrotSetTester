@@ -12,12 +12,14 @@ def testc(re, im, its):
     
     z_0 = complex(0, 0)
     listz = [z_0]
+    count = 0
     
     for z in listz:
         while len(listz) < its:
             listz.append(listz[-1]**2 + c)
+            count += 1
             if ((listz[-1].real)**(2) + (listz[-1].imag)**(2))**0.5 > 4:
-                return False
+                return False, count
     return True
     
 def cgen(its):
