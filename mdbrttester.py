@@ -5,6 +5,7 @@ Created on Thu Mar 19 23:30:47 2026
 
 @author: naialane
 """
+import random 
 
 def testc(re, im, its):
     c = complex(re, im)
@@ -19,6 +20,15 @@ def testc(re, im, its):
                 return False
     return True
     
+def cgen(its):
     
+    clist = []
+    for i in range(its):
+        rl = random.random()
+        im = random.random()
+        clist.append([complex(rl, im), testc(rl, im, 100)])
+        
+    return clist
+        
     
     
